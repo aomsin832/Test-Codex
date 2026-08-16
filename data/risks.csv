@@ -1,0 +1,11 @@
+Risk ID,Risk title,Description,Severity,Business area,Owner,Status,Due date
+RISK-001,Unsupported server software,A test server uses software that no longer receives security updates.,Critical,Technology,Jordan Lee,In Progress,2026-06-30
+RISK-002,Weak supplier access review,Supplier accounts are not reviewed on a regular schedule.,High,Procurement,Casey Morgan,Open,2026-07-15
+RISK-003,Incomplete backup testing,Several recovery backups have not been tested this quarter.,High,Operations,Taylor Reed,In Progress,2026-09-30
+RISK-004,Missing phishing refresher,Some fictional staff have not completed the annual phishing refresher.,Medium,People,Alex Kim,Open,2026-10-15
+RISK-005,Excessive shared drive access,A shared project folder has more members than necessary.,Medium,Finance,Riley Shah,Accepted,2026-11-01
+RISK-006,Unencrypted test device,A laboratory test laptop does not have disk encryption enabled.,High,Research,Sam Rivera,Open,2026-08-01
+RISK-007,Delayed log review,Security logs are reviewed less frequently than the fictional policy requires.,Medium,Technology,Drew Patel,In Progress,2026-09-10
+RISK-008,Old guest wireless password,The guest network password has not been rotated recently.,Low,Facilities,Jamie Chen,Closed,2026-05-20
+RISK-009,Incomplete incident contact list,The incident response contact list is missing two role backups.,Critical,Legal,Avery Brooks,Open,2026-08-31
+RISK-010,Unused cloud test accounts,Several synthetic test accounts remain enabled after a training exercise.,Low,Training,Morgan Ellis,Closed,2026-07-01
