@@ -1,15 +1,9 @@
-# Python cache and compiled files
 __pycache__/
 *.py[cod]
-
-# Virtual environments
+.pytest_cache/
 .venv/
 venv/
-
-# Streamlit local settings and common editor files
 .streamlit/secrets.toml
 .vscode/
 .idea/
-
-# Operating system files
 .DS_Store

@@ -1,0 +1,20 @@
+name: Tests
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "17 3 * * *"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: pytest -q
+      - run: python -m compileall -q app.py src tests
+      - name: Validate synthetic data
+        run: python -c "import json,pandas as pd; from src.data_validation import validate_all; c=json.load(open('data/target_company.json')); f=pd.read_csv('data/cyber_findings.csv'); assert not validate_all(c,f)"
