@@ -1,8 +1,0 @@
-{
-  "project_name": "Project Atlas", "buyer": "NorthStar Capital Partners", "target": "Atlas Digital Services",
-  "transaction_type": "Acquisition", "industry": "Technology-enabled business services", "geography": "Southeast Asia",
-  "revenue": 100000000, "ebitda": 20000000, "enterprise_value": 250000000, "employees": 1500,
-  "technology_applications": 120, "critical_applications": 18, "cloud_environment": "Hybrid cloud",
-  "personal_customer_data": true, "historical_cyber_incidents": "Synthetic / illustrative only",
-  "fictional": true
-}

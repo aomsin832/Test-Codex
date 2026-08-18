@@ -1,0 +1,8 @@
+{
+  "target_id": "forge", "display_order": 3, "project_name": "Project Forge", "buyer": "NorthStar Capital Partners", "target": "Forge Industrial Solutions",
+  "transaction_type": "Acquisition", "industry": "Industrial technology services", "geography": "Central Europe", "profile": "Legacy technology risk",
+  "learning_focus": "A lower-value target where unsupported technology and operational dependencies create substantial investment and integration needs.",
+  "revenue": 85000000, "ebitda": 14000000, "enterprise_value": 140000000, "employees": 2100,
+  "technology_applications": 165, "critical_applications": 28, "cloud_environment": "Predominantly on-premises",
+  "personal_customer_data": true, "historical_cyber_incidents": "Synthetic legacy malware event reported; evidence review incomplete", "fictional": true
+}
