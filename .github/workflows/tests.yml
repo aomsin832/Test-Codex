@@ -17,4 +17,12 @@ jobs:
       - run: pytest -q
       - run: python -m compileall -q app.py src tests
       - name: Validate synthetic data
-        run: python -c "import json,pandas as pd; from src.data_validation import validate_all; c=json.load(open('data/target_company.json')); f=pd.read_csv('data/cyber_findings.csv'); assert not validate_all(c,f)"
+        run: |
+          python - <<'PY'
+          from src.target_engine import load_all_targets
+
+          targets = load_all_targets("data/targets")
+          assert targets, "No synthetic targets were loaded."
+          assert all(record["company"]["fictional"] is True for record in targets.values())
+          print(f"Validated {len(targets)} synthetic targets: {', '.join(targets)}")
+          PY
