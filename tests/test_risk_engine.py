@@ -9,4 +9,9 @@ def test_rules_classify_known_extremes():
 
 def test_explanation_is_transparent():
     rating,score,text=score_finding(finding(severity="High",likelihood="High",business_criticality="High",remediation_complexity="Medium",affected_assets=6))
-    assert rating=="High" and str(score) in text and "affected assets" in text
+    assert rating=="High" and str(score) in text and "reported breadth" in text and "not a residual-risk conclusion" in text
+
+def test_remediation_complexity_does_not_inflate_exposure():
+    low=score_finding(finding(remediation_complexity="Low"))[:2]
+    high=score_finding(finding(remediation_complexity="High"))[:2]
+    assert low==high

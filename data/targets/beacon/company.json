@@ -1,0 +1,8 @@
+{
+  "target_id": "beacon", "display_order": 2, "project_name": "Project Beacon", "buyer": "NorthStar Capital Partners", "target": "Beacon Cloud Products",
+  "transaction_type": "Acquisition", "industry": "Cloud software", "geography": "Northern Europe", "profile": "Stronger cyber posture",
+  "learning_focus": "A stronger control environment with limited remediation but a higher acquisition multiple.",
+  "revenue": 150000000, "ebitda": 30000000, "enterprise_value": 480000000, "employees": 1100,
+  "technology_applications": 74, "critical_applications": 10, "cloud_environment": "Cloud native",
+  "personal_customer_data": true, "historical_cyber_incidents": "No material incidents identified in this synthetic scenario", "fictional": true
+}

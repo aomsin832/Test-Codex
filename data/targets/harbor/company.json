@@ -1,0 +1,8 @@
+{
+  "target_id": "harbor", "display_order": 4, "project_name": "Project Harbor", "buyer": "NorthStar Capital Partners", "target": "Harbor Customer Analytics",
+  "transaction_type": "Acquisition", "industry": "Customer data and analytics services", "geography": "North America and Asia-Pacific", "profile": "Data and third-party risk",
+  "learning_focus": "Moderate technical remediation with greater privacy, contractual, evidence, and vendor uncertainty.",
+  "revenue": 115000000, "ebitda": 22000000, "enterprise_value": 275000000, "employees": 1350,
+  "technology_applications": 96, "critical_applications": 16, "cloud_environment": "Multi-cloud",
+  "personal_customer_data": true, "historical_cyber_incidents": "Synthetic vendor-related notification under review", "fictional": true
+}

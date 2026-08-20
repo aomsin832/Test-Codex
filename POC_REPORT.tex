@@ -1,0 +1,383 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+
+\definecolor{navy}{HTML}{173B50}
+\definecolor{blue}{HTML}{2F607E}
+\definecolor{lightblue}{HTML}{EAF2F6}
+\definecolor{darkgray}{HTML}{3F4850}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=navy,
+  urlcolor=blue,
+  pdftitle={Cyber M\&A Due Diligence \& Valuation Impact Navigator},
+  pdfauthor={Jirat Nimsombun}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Cyber M\&A Navigator}
+\rhead{Learning Proof of Concept}
+\cfoot{\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65em}
+\setlist[itemize]{leftmargin=1.5em,itemsep=0.25em,topsep=0.25em}
+\setlist[enumerate]{leftmargin=1.7em,itemsep=0.25em,topsep=0.25em}
+\renewcommand{\arraystretch}{1.18}
+
+\newcommand{\poc}{Cyber M\&A Due Diligence \& Valuation Impact Navigator}
+\newcommand{\callout}[1]{%
+  \begin{center}
+  \colorbox{lightblue}{\parbox{0.92\linewidth}{\color{navy}\textbf{#1}}}
+  \end{center}}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  \vspace*{2.2cm}
+  {\color{navy}\rule{\textwidth}{1.2pt}}\\[1.2cm]
+  {\Huge\bfseries\color{navy} Cyber M\&A Due Diligence\\[0.25cm]
+  \& Valuation Impact Navigator\par}
+  \vspace{0.55cm}
+  {\Large From cyber finding to deal insight\par}
+  \vspace{1.2cm}
+  {\large A deterministic, multi-target learning proof of concept\par}
+  \vfill
+  \begin{tabular}{rl}
+    \textbf{Author:} & Jirat Nimsombun \\
+    \textbf{Email:} & \href{mailto:jnimsombun@deloitte.com}{jnimsombun@deloitte.com} \\
+    \textbf{Role:} & Cyber Strategy \& Transformation Summer Analyst \\
+    \textbf{Organisation:} & Deloitte Southeast Asia \\
+  \end{tabular}
+  \vfill
+  \callout{Synthetic data only --- personal learning POC --- not a client deliverable, professional opinion, valuation, investment recommendation, or Deloitte methodology.}
+  \vspace{0.5cm}
+  {\color{navy}\rule{\textwidth}{1.2pt}}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Executive summary}
+
+The \poc{} is a Streamlit-based learning application that demonstrates how cybersecurity diligence observations can be translated into information useful to an M\&A deal team. It connects seven steps:
+
+\callout{Evidence / finding $\rightarrow$ business relevance $\rightarrow$ additional diligence $\rightarrow$ remediation $\rightarrow$ transaction consideration $\rightarrow$ integration action $\rightarrow$ illustrative financial sensitivity}
+
+The POC uses four fictional acquisition targets with different cyber and financial profiles. Deterministic Python engines validate the source data, create a preliminary-exposure screen, aggregate synthetic remediation cases, map qualified transaction considerations, calculate financial-scale sensitivities, build an integration roadmap, and draft an executive summary. The calculations contain no external API, generative AI, database, authentication service, or hidden probabilistic model.
+
+The POC is deliberately conservative. A technical observation does not automatically become a transaction issue, remediation expenditure is not economic loss, and remediation cost does not automatically reduce Enterprise Value or purchase price. Actual transaction treatment depends on evidence, materiality, the buyer's operating model, deal structure, negotiation, accounting, tax, legal and insurance analysis, and professional judgement.
+
+\section{The problem the POC explores}
+
+Cybersecurity diligence and M\&A decision-making use different vocabularies. A technical team may report unsupported software, incomplete logging, an identity-control exception, or missing vendor evidence. A transaction team instead needs to understand:
+
+\begin{itemize}
+  \item what evidence supports the observation and what remains uncertain;
+  \item which business services, data, customers, contracts, or jurisdictions are affected;
+  \item whether action is needed before signing or completion;
+  \item what must be ready on Day 1;
+  \item the likely remediation and integration effort after close;
+  \item whether legal, privacy, contractual, incident, or insurance specialists should review the matter; and
+  \item the approximate financial scale relative to Enterprise Value and EBITDA.
+\end{itemize}
+
+The POC provides a transparent bridge between these questions. It is not intended to automate judgement or produce a definitive cyber-risk opinion.
+
+\section{What the POC does}
+
+\subsection{Core capabilities}
+
+\begin{enumerate}
+  \item \textbf{Loads and validates synthetic targets.} Each target has a fictional company profile and finding register. Required fields, enumerations, unique IDs, non-negative values, and Low $\leq$ Base $\leq$ High cost ordering are checked.
+  \item \textbf{Screens preliminary exposure.} A transparent rules engine uses stated technical severity, assumed likelihood, business criticality, and reported asset breadth. Remediation complexity is excluded from exposure scoring because difficulty does not increase the underlying cyber exposure.
+  \item \textbf{Aggregates remediation assumptions.} Low, Base, and High synthetic cases are summed from individual findings rather than hard-coded at portfolio level.
+  \item \textbf{Separates transaction timing from delivery.} Pre-close and Day 1 indicate diligence or readiness actions. Full remediation can continue through Day 30, Day 100, 6--12 months, or longer-term transformation.
+  \item \textbf{Maps transaction considerations.} Findings lead to qualified prompts for additional diligence, specialist validation, privacy or contract review, insurance evidence review, Day 1 safeguards, and integration planning.
+  \item \textbf{Calculates illustrative financial sensitivity.} The tool calculates scale ratios and a hypothetical allocation scenario without calling the result fair value or a recommended transaction price.
+  \item \textbf{Compares synthetic targets.} The comparison page shows how targets with different headline values can have different cyber diligence, remediation, and integration profiles.
+\end{enumerate}
+
+\subsection{What it does not do}
+
+The POC does not perform penetration testing, discover live vulnerabilities, estimate probability-weighted loss, select valuation multiples, calculate equity value, draft transaction documents, determine insurance coverage, or recommend whether a buyer should proceed. It also does not model tax, working capital, debt-like treatment, synergies, accounting classification, or negotiated protections.
+
+\section{Synthetic target profiles}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries}l r r r r X}
+\toprule
+Target & EV & EBITDA & EV/EBITDA & Base cost & Learning profile \\
+\midrule
+Atlas & \$250.0m & \$20.0m & 12.5x & \$6.32m & Balanced identity, infrastructure, data, resilience, and integration case. \\
+Beacon & \$480.0m & \$30.0m & 16.0x & \$0.59m & Stronger cyber posture, fewer priority observations, and lower remediation scale. \\
+Forge & \$140.0m & \$14.0m & 10.0x & \$14.05m & Unsupported and operational technology dependencies with long, complex remediation. \\
+Harbor & \$275.0m & \$22.0m & 12.5x & \$3.28m & Data, vendor, privacy, contractual, and evidence uncertainty. \\
+\bottomrule
+\end{tabularx}
+\caption{Synthetic target financial and remediation profiles. Values are learning assumptions, not market data.}
+\end{table}
+
+\subsection{What each target teaches}
+
+\textbf{Project Atlas} is the default balanced example. It supports a complete walkthrough from privileged-access evidence through remediation, transaction prompts, financial scale, and longer-term platform change.
+
+\textbf{Project Beacon} shows that a stronger control environment and lower remediation requirement can coexist with a higher headline acquisition multiple. Cyber posture alone cannot establish whether that multiple is appropriate.
+
+\textbf{Project Forge} shows that a lower-valued target can require substantial legacy-technology investment, Day 1 safeguards, and multi-year transformation. Its Base synthetic remediation cost is material relative to both EV and annual EBITDA, but that does not make the cost an automatic valuation deduction.
+
+\textbf{Project Harbor} shows how moderate technical remediation can coexist with significant evidence, privacy, vendor, customer-contract, and notification uncertainty. More diligence or specialist review may be more important than an immediate technical or price conclusion.
+
+\section{Deterministic architecture}
+
+\begin{verbatim}
+Synthetic target JSON + finding CSV
+                 |
+                 v
+          Data validation
+                 |
+                 v
+ Preliminary-exposure risk engine
+                 |
+                 v
+ Remediation aggregation and timing
+                 |
+                 v
+     M&A impact / question engine
+          /                    \
+         v                      v
+Financial sensitivity     Integration roadmap
+          \                    /
+           v                  v
+       Deterministic executive summary
+                 |
+                 v
+           Streamlit interface
+\end{verbatim}
+
+The design keeps business logic outside the Streamlit user interface. This improves testability and makes it possible to add another synthetic target by creating a new target folder rather than copying calculations into the app.
+
+\section{Cyber M\&A methodology}
+
+\subsection{From observation to transaction question}
+
+The central teaching principle is that technical severity alone does not determine transaction importance. An unsupported server can be a routine upgrade if it is isolated and non-critical; an unsupported ERP can be more important if revenue, financial reporting, or operational continuity depends on it.
+
+Each priority finding is therefore presented as:
+
+\begin{enumerate}
+  \item \textbf{Cyber observation:} what was reported or identified technically;
+  \item \textbf{Business implication:} what business service or exposure may be affected;
+  \item \textbf{Transaction consideration:} what the deal team may need to plan or investigate; and
+  \item \textbf{Recommended diligence question:} the specific evidence the buyer should request next.
+\end{enumerate}
+
+Useful follow-up evidence can include affected populations, MFA coverage, vendor-support dates, revenue dependencies, exploitability, compensating controls, historical incidents, customer clauses, recovery-test results, vendor rights, insurance correspondence, approved budgets, and accountable owners.
+
+\subsection{Transaction timing versus full delivery}
+
+A finding may require multiple actions:
+
+\begin{itemize}
+  \item \textbf{Pre-close:} validate evidence, scope, ownership, and potential transaction treatment;
+  \item \textbf{Day 1:} confirm interim safeguards, continuity needs, access decisions, and accountable owners;
+  \item \textbf{Day 30 / Day 100:} begin and deliver near-term remediation and integration actions;
+  \item \textbf{6--12 months:} complete broader remediation and operating-model work; and
+  \item \textbf{Longer-term transformation:} replace major platforms or complete complex change extending beyond one year.
+\end{itemize}
+
+A roadmap can repeat a finding at several stages. The repeated Base cost is a reference to the same remediation programme and must not be added once per stage.
+
+\section{Financial sensitivity}
+
+\subsection{Formulas}
+
+For Enterprise Value $EV$, EBITDA $E$, remediation scenario cost $C$, planning factor $p$, and hypothetical allocation percentage $a$:
+
+\begin{align*}
+\text{Headline EV / EBITDA} &= \frac{EV}{E} \\
+\text{Selected synthetic cost} &= C \times p \\
+\text{Cost / EV} &= \frac{C \times p}{EV} \\
+\text{Cost / EBITDA} &= \frac{C \times p}{E} \\
+\text{Hypothetical allocation} &= C \times p \times a \\
+\text{Illustrative EV} &= EV - (C \times p \times a) \\
+\text{Illustrative EV / EBITDA} &= \frac{EV - (C \times p \times a)}{E}
+\end{align*}
+
+If EBITDA is zero, multiple and EBITDA-ratio outputs are reported as not applicable rather than causing division by zero.
+
+\subsection{Worked Atlas example}
+
+Using the Atlas Base case and a planning factor of 1.0:
+
+\begin{align*}
+\text{Headline multiple} &= \$250.0m / \$20.0m = 12.5x \\
+\text{Base cost / EV} &= \$6.32m / \$250.0m = 2.528\% \\
+\text{Base cost / EBITDA} &= \$6.32m / \$20.0m = 31.6\% \\
+\text{50\% hypothetical allocation} &= \$6.32m \times 50\% = \$3.16m \\
+\text{Illustrative EV} &= \$250.0m - \$3.16m = \$246.84m \\
+\text{Illustrative multiple} &= \$246.84m / \$20.0m = 12.342x
+\end{align*}
+
+\callout{Remediation expenditure is not automatically economic loss, a debt-like item, an EBITDA adjustment, or a dollar-for-dollar purchase-price reduction.}
+
+The expenditure may be capital or operating, one-time or recurring, internally delivered or externally purchased, already budgeted, insured, shared with integration, or specific to the buyer's target operating model. The sensitivity is arithmetic for learning about scale; it is not a valuation opinion.
+
+\section{How the POC could be automated further}
+
+Automation should improve evidence handling and workflow while keeping decisions reviewable. A sensible progression is outlined below.
+
+\subsection{Near-term: deterministic workflow improvements}
+
+\begin{itemize}
+  \item Add versioned data schemas and stronger validation for evidence status, confidence, owners, currencies, and cost dates.
+  \item Import structured finding registers from approved spreadsheets or governance, risk, and compliance tools.
+  \item Add deterministic evidence-request checklists by domain, industry, deal perimeter, and transaction phase.
+  \item Track request status, source document, reviewer, last-updated date, and unresolved questions.
+  \item Add currency and inflation-date handling without implying false estimate precision.
+  \item Export a controlled diligence register, decision log, and integration handoff pack.
+\end{itemize}
+
+\subsection{Tool-assisted evidence collection}
+
+Subject to authorization, security, confidentiality, and data-residency requirements, future adapters could collect evidence from:
+
+\begin{itemize}
+  \item identity platforms for privileged-account and MFA coverage;
+  \item vulnerability and asset-management tools for version, support, exposure, and patch data;
+  \item cloud-security tools for subscription inventory and configuration coverage;
+  \item security-information and event-management tools for log-source and alert coverage;
+  \item ticketing and project tools for remediation ownership, budgets, milestones, and exceptions;
+  \item contract repositories for approved searches of security, incident, audit, and notification clauses; and
+  \item third-party risk platforms for critical-vendor assessment status and open issues.
+\end{itemize}
+
+Connectors should be read-only by default, scoped to the authorized deal perimeter, logged, and designed to preserve source links. Automated collection should not be treated as proof that a control is effective.
+
+\subsection{Analytics and controlled AI assistance}
+
+A later optional narrative layer could:
+
+\begin{itemize}
+  \item summarize validated evidence and highlight contradictions;
+  \item draft target-specific diligence questions from structured findings;
+  \item map similar observations to a controlled taxonomy;
+  \item identify missing evidence against an approved checklist;
+  \item draft executive or buyer/seller perspectives from deterministic outputs; and
+  \item help create an integration handoff narrative.
+\end{itemize}
+
+Any AI component should sit \emph{after} validation and deterministic calculations. It should cite source evidence, separate facts from inference, prevent cross-deal data leakage, respect access controls and retention requirements, and require human approval. Risk ratings, cost aggregation, financial arithmetic, and transaction decisions should remain authoritative outside the language model.
+
+\subsection{Controls required before operational use}
+
+\begin{longtable}{>{\bfseries}p{0.24\textwidth}p{0.69\textwidth}}
+\toprule
+Control area & Minimum expectation \\
+\midrule
+Data governance & Approved synthetic or client-data classification, retention, deletion, residency, and purpose limitation. \\
+Access & Least privilege, deal-level segregation, strong authentication, and periodic access review. \\
+Traceability & Source document links, calculation version, assumption history, reviewer, and timestamp. \\
+Human review & Named cyber, deal, legal, finance, accounting, tax, privacy, and insurance reviewers where relevant. \\
+Model governance & Controlled prompts, evaluation sets, hallucination checks, output labeling, and no autonomous transaction decisions. \\
+Security & Threat modeling, dependency management, secret scanning, logging, backup, and incident response. \\
+Quality assurance & Unit, integration, data-reconciliation, UI, regression, and independent financial tests. \\
+\bottomrule
+\end{longtable}
+
+\section{Self-check and quality controls}
+
+The repository includes automated checks for:
+
+\begin{itemize}
+  \item source-data validation and explicit fictional flags for all targets;
+  \item unique finding IDs and prevention of target-data leakage;
+  \item Low $\leq$ Base $\leq$ High per finding and in aggregate;
+  \item independent EV / EBITDA, cost / EV, and cost / EBITDA reconciliation;
+  \item Low, Base, and High scenarios at 0\%, 25\%, 50\%, 75\%, and 100\% allocation;
+  \item zero EBITDA, zero remediation, negative inputs, invalid percentages, and extreme cost assumptions;
+  \item preliminary-exposure scoring and evidence-led diligence questions;
+  \item Pre-close, Day 1, first-100-day, and full-delivery sequencing;
+  \item deterministic executive summaries and target comparison metrics; and
+  \item Streamlit rendering, target switching, compilation, and health checks.
+\end{itemize}
+
+\subsection{Presenter self-check}
+
+Before demonstrating the POC, confirm:
+
+\begin{enumerate}
+  \item All displayed names and data are synthetic and the fictional label is visible.
+  \item The selected target updates the overview, findings, remediation, sensitivity, roadmap, and summary.
+  \item Cost references are not added repeatedly across roadmap stages.
+  \item Preliminary exposure is not described as residual risk.
+  \item Cost / EBITDA is described as a scale indicator, not an EBITDA deduction.
+  \item Illustrative EV is not called fair value, intrinsic value, company worth, or recommended price.
+  \item Cybersecurity is presented as one input alongside wider transaction considerations.
+  \item Limitations and required human judgement are stated when presenting conclusions.
+\end{enumerate}
+
+\section{Limitations and responsible positioning}
+
+This POC is a teaching aid. It does not model complete evidence confidence, exploitability, threat scenarios, control effectiveness, loss probability, legal materiality, regulatory conclusions, insurance coverage, accounting treatment, tax, working capital, equity value, debt, synergies, market valuation, or negotiated transaction documents. Finding counts are not normalized for target size or diligence coverage. Integration complexity is a simple transparent screen rather than a detailed integration estimate.
+
+The synthetic estimates are not market benchmarks or vendor quotations. A live diligence engagement would require deal-specific scope, secure evidence handling, interviews, technical validation, legal and financial analysis, and documented professional review.
+
+\section{Conclusion}
+
+The \poc{} demonstrates a credible learning flow from cyber evidence to M\&A decision support while preserving important boundaries. Its value is not in automating a deal conclusion; it is in making assumptions visible, prompting better questions, maintaining calculation discipline, and showing how cyber diligence continues into Day 1 and post-close integration.
+
+Future automation can improve collection, traceability, workflow, and narrative drafting. It should not replace the human judgement required to interpret incomplete evidence, determine materiality, negotiate transaction treatment, or make an investment decision.
+
+\appendix
+\section{Suggested five-minute walkthrough}
+
+\begin{enumerate}
+  \item \textbf{Overview (30 seconds):} establish the fictional deal, headline financials, findings, and Base remediation scale.
+  \item \textbf{Cyber Findings (45 seconds):} use the privileged-account MFA observation to distinguish reported evidence from a proven control failure.
+  \item \textbf{Cyber $\rightarrow$ M\&A (45 seconds):} show the business implication, qualified transaction prompt, and targeted buyer question.
+  \item \textbf{Remediation (45 seconds):} compare Low, Base, and High cases and distinguish transaction timing from delivery.
+  \item \textbf{Financial Sensitivity (45 seconds):} move from 0\% to 50\% allocation and explain why the result is illustrative only.
+  \item \textbf{Integration Roadmap (45 seconds):} show that one issue can require Pre-close evidence, a Day 1 safeguard, and longer-term remediation.
+  \item \textbf{Target Comparison (45 seconds):} compare Atlas and Harbor, then contrast Beacon and Forge without ranking the investments.
+\end{enumerate}
+
+\section{Repository references}
+
+\begin{itemize}
+  \item \texttt{app.py}: Streamlit presentation layer.
+  \item \texttt{data/targets/}: fictional company profiles and finding registers.
+  \item \texttt{src/risk\_engine.py}: preliminary-exposure screen.
+  \item \texttt{src/remediation\_engine.py}: cost aggregation and roadmap stages.
+  \item \texttt{src/deal\_impact\_engine.py}: qualified M\&A considerations and evidence questions.
+  \item \texttt{src/valuation\_engine.py}: financial-scale sensitivity calculations.
+  \item \texttt{src/target\_engine.py}: target discovery and cross-target comparison.
+  \item \texttt{src/summary\_engine.py}: deterministic executive briefing.
+  \item \texttt{tests/}: unit, integration, financial, and Streamlit checks.
+\end{itemize}
+
+\vfill
+\begin{center}
+\small\color{darkgray}
+Prepared by Jirat Nimsombun --- Cyber Strategy \& Transformation Summer Analyst, Deloitte Southeast Asia.\\
+Personal learning proof of concept using entirely synthetic data. No endorsement or official methodology is implied.
+\end{center}
+
+\end{document}
